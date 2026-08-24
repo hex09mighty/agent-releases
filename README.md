@@ -34,8 +34,10 @@ The Linux release package has the following structure:
 ```text
 employee-agent-linux-amd64-<VERSION>.tar.gz
 
-├── employee-agent
-├── installer
+├── dist/
+│    └── systemd/
+│       ├── installer
+│       └── employee-agent
 ├── configs/
 │   └── config.yaml
 └── deployments/
@@ -67,8 +69,7 @@ ls -la
 You should see:
 
 ```text
-employee-agent
-installer
+dist/
 configs/
 deployments/
 ```
@@ -78,7 +79,7 @@ deployments/
 The installer must run with root privileges.
 
 ```bash
-sudo ./installer
+sudo ./dist/linux/installer --api-url https://api.example.com
 ```
 
 The installer will:
