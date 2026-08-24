@@ -34,10 +34,8 @@ The Linux release package has the following structure:
 ```text
 employee-agent-linux-amd64-<VERSION>.tar.gz
 
-├── dist/
-│    └── systemd/
-│       ├── installer
-│       └── employee-agent
+├── employee-agent
+├── installer
 ├── configs/
 │   └── config.yaml
 └── deployments/
@@ -46,13 +44,6 @@ employee-agent-linux-amd64-<VERSION>.tar.gz
 ```
 
 ## 2.2 Extract the Release
-
-Create an installation directory for the release package:
-
-```bash
-mkdir -p employee-agent-install
-cd employee-agent-install
-```
 
 Extract the package:
 
@@ -69,7 +60,8 @@ ls -la
 You should see:
 
 ```text
-dist/
+employee-agent
+installer
 configs/
 deployments/
 ```
@@ -79,7 +71,7 @@ deployments/
 The installer must run with root privileges.
 
 ```bash
-sudo ./dist/linux/installer --api-url https://api.example.com
+sudo ./installer
 ```
 
 The installer will:
@@ -236,7 +228,7 @@ cd C:\employee-agent-install
 Run:
 
 ```powershell
-.\installer.exe --api-url https://api.example.com
+.\installer.exe
 ```
 
 The installer will:
@@ -451,13 +443,13 @@ sudo systemctl restart employee-agent
 Run:
 
 ```bash
-sudo ./installer --api-url https://api.example.com
+sudo ./installer
 ```
 
 instead of:
 
 ```bash
-./installer --api-url https://api.example.com
+./installer
 ```
 
 ---
@@ -489,7 +481,7 @@ Restart-Service -Name MonitorTrackAgent
 Run the installer again from an **Administrator PowerShell**:
 
 ```powershell
-.\installer.exe --api-url https://api.example.com
+.\installer.exe
 ```
 
 ### Installer says Administrator privileges are required
@@ -504,7 +496,7 @@ Then:
 
 ```powershell
 cd C:\employee-agent-install
-.\installer.exe --api-url https://api.example.com
+.\installer.exe
 ```
 
 ---
@@ -518,7 +510,7 @@ Download the new release package and extract it.
 Run the installer again:
 
 ```bash
-sudo ./installer --api-url https://api.example.com
+sudo ./installer
 ```
 
 The installer will replace the installed binary and configuration and restart the service.
@@ -537,7 +529,7 @@ Open PowerShell as Administrator:
 
 ```powershell
 cd C:\employee-agent-install
-.\installer.exe --api-url https://api.example.com
+.\installer.exe
 ```
 
 The installer will stop the existing service, update the application, and start the service again.
@@ -601,7 +593,7 @@ for Windows.
 ```bash
 tar -xzf employee-agent-linux-amd64-<VERSION>.tar.gz
 cd employee-agent-linux-amd64-<VERSION>
-sudo ./installer --api-url https://api.example.com
+sudo ./installer
 sudo systemctl status employee-agent
 ```
 
@@ -612,7 +604,7 @@ Run **PowerShell as Administrator**:
 ```powershell
 Expand-Archive employee-agent-windows-amd64-<VERSION>.zip -DestinationPath C:\employee-agent-install
 cd C:\employee-agent-install
-.\installer.exe --api-url https://api.example.com
+.\installer.exe
 Get-Service -Name MonitorTrackAgent
 ```
 
