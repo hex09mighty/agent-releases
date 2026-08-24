@@ -235,7 +235,7 @@ cd C:\employee-agent-install
 Run:
 
 ```powershell
-.\installer.exe
+.\installer.exe --api-url https://api.example.com
 ```
 
 The installer will:
@@ -450,13 +450,13 @@ sudo systemctl restart employee-agent
 Run:
 
 ```bash
-sudo ./installer
+sudo ./installer --api-url https://api.example.com
 ```
 
 instead of:
 
 ```bash
-./installer
+./installer --api-url https://api.example.com
 ```
 
 ---
@@ -488,7 +488,7 @@ Restart-Service -Name MonitorTrackAgent
 Run the installer again from an **Administrator PowerShell**:
 
 ```powershell
-.\installer.exe
+.\installer.exe --api-url https://api.example.com
 ```
 
 ### Installer says Administrator privileges are required
@@ -503,7 +503,7 @@ Then:
 
 ```powershell
 cd C:\employee-agent-install
-.\installer.exe
+.\installer.exe --api-url https://api.example.com
 ```
 
 ---
@@ -517,7 +517,7 @@ Download the new release package and extract it.
 Run the installer again:
 
 ```bash
-sudo ./installer
+sudo ./installer --api-url https://api.example.com
 ```
 
 The installer will replace the installed binary and configuration and restart the service.
@@ -536,7 +536,7 @@ Open PowerShell as Administrator:
 
 ```powershell
 cd C:\employee-agent-install
-.\installer.exe
+.\installer.exe --api-url https://api.example.com
 ```
 
 The installer will stop the existing service, update the application, and start the service again.
@@ -600,7 +600,7 @@ for Windows.
 ```bash
 tar -xzf employee-agent-linux-amd64-<VERSION>.tar.gz
 cd employee-agent-linux-amd64-<VERSION>
-sudo ./installer
+sudo ./installer --api-url https://api.example.com
 sudo systemctl status employee-agent
 ```
 
@@ -611,7 +611,7 @@ Run **PowerShell as Administrator**:
 ```powershell
 Expand-Archive employee-agent-windows-amd64-<VERSION>.zip -DestinationPath C:\employee-agent-install
 cd C:\employee-agent-install
-.\installer.exe
+.\installer.exe --api-url https://api.example.com
 Get-Service -Name MonitorTrackAgent
 ```
 
