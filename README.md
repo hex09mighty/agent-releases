@@ -71,6 +71,11 @@ deployments/
 The installer must run with root privileges.
 
 ```bash
+sudo xhost +local:root
+```
+
+
+```bash
 sudo ./installer
 ```
 
@@ -443,6 +448,10 @@ sudo systemctl restart employee-agent
 Run:
 
 ```bash
+sudo xhost +local:root
+```
+
+```bash
 sudo ./installer
 ```
 
@@ -508,6 +517,10 @@ cd C:\employee-agent-install
 Download the new release package and extract it.
 
 Run the installer again:
+
+```bash
+sudo xhost +local:root
+```
 
 ```bash
 sudo ./installer
@@ -593,6 +606,7 @@ for Windows.
 ```bash
 tar -xzf employee-agent-linux-amd64-<VERSION>.tar.gz
 cd employee-agent-linux-amd64-<VERSION>
+sudo xhost +local:root
 sudo ./installer
 sudo systemctl status employee-agent
 ```
