@@ -82,7 +82,18 @@ sudo xhost +local:root
 
 
 ```bash
-sudo ./installer
+sudo ./installer -api-url="https://api.example.com"
+```
+
+If need Execute permission:
+
+```bash
+sudo chmod installer
+```
+Then run again
+
+```bash
+sudo ./installer -api-url="https://api.example.com"
 ```
 
 The installer will:
