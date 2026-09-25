@@ -51,6 +51,12 @@ Extract the package:
 tar -xzf employee-agent-linux-amd64-<VERSION>.tar.gz
 ```
 
+Change Directory:
+
+```bash
+cd employee-agent-linux-amd64-<VERSION>.tar.gz
+```
+
 Verify the files:
 
 ```bash
